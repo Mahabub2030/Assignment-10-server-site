@@ -102,6 +102,7 @@ async function run() {
       const result = await cursor.toArray();
       res.send(result);
     })
+    
     app.post('/application', async(req,res)=>{
       const applicationInfo = req.body;
       console.log(applicationInfo);
