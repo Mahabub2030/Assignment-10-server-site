@@ -93,11 +93,7 @@ async function run() {
     // for application*************** 
     app.get('/application', async(req,res)=>{
       const cursor = applicationCollection.find()
-      // const {searchParams} = req.query;
-      // const option = {};
-      // if(searchParams){
-      //   const option = {visaType:{$regex:searchPrams,$option:"i"}};
-      // }
+      
       
       const result = await cursor.toArray();
       res.send(result);
@@ -109,6 +105,8 @@ async function run() {
       const result = await applicationCollection.insertOne(applicationInfo);
       res.send(result);
     })
+
+
     app.delete('/application/:id',async(req,res)=>{
         const id=req.params.id;
         const query = {_id: new ObjectId(id)}
