@@ -34,6 +34,8 @@ async function run() {
     const visaCollection =  client.db('visaDB').collection('visa');
     const applicationCollection = client.db('visaDB').collection('application')
 
+    
+    
     // for visa***********
     app.get('/visa', async(req,res)=>{
       const cursor = visaCollection.find();
