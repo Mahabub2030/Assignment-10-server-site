@@ -94,7 +94,7 @@ async function run() {
     app.get('/application', async(req,res)=>{
       const cursor = applicationCollection.find()
       
-      
+
       const result = await cursor.toArray();
       res.send(result);
     })
@@ -105,8 +105,6 @@ async function run() {
       const result = await applicationCollection.insertOne(applicationInfo);
       res.send(result);
     })
-
-
     app.delete('/application/:id',async(req,res)=>{
         const id=req.params.id;
         const query = {_id: new ObjectId(id)}
@@ -114,12 +112,10 @@ async function run() {
         res.send(result);
     })
 
-    // Send a ping to confirm a successful connection
-    // await client.db("admin").command({ ping: 1 });
+ 
     console.log("Pinged your deployment. You successfully connected to MongoDB!");
   } finally {
-    // Ensures that the client will close when you finish/error
-    // await client.close();
+    
   }
 }
 run().catch(console.dir);
@@ -131,5 +127,5 @@ app.get('/',(req,res)=>{
 })
 
 app.listen(port,()=>{
-    console.log(`Coffee server is running on port:${port}`);
+    console.log(`assing 10:${port}`);
 })
